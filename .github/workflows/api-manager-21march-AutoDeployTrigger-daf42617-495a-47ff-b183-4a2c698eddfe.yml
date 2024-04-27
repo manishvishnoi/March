@@ -1,6 +1,6 @@
 name: Trigger auto deployment for api-manager-21march
 
-# When this action will be executed
+# When this action will be executed [TEST]
 on:
   # Automatically trigger it when detected changes in repo
   push:
