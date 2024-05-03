@@ -2,7 +2,7 @@ name: Trigger auto deployment for test123
 
 # When this action will be executed
 on:
-  # Automatically trigger it when detected changes in repo
+  # Automatically trigger it when detected changes in repo TEST
   push:
     branches: 
       [ main ]
