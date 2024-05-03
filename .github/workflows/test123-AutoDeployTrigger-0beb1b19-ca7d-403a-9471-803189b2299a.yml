@@ -36,7 +36,7 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}
           acrName: axwaymanish.azurecr.io/api-manager-21march
-          containerAppName: test123
+          containerAppName: testanm
           resourceGroup: RG-mavishnoi
           
 
