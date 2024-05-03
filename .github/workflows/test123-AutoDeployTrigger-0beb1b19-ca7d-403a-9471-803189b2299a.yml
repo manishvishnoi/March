@@ -31,20 +31,21 @@ jobs:
           tenant-id: ${{ secrets.TEST123_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.TEST123_AZURE_SUBSCRIPTION_ID }}
 
-      - name: Build and push container image to registry
-        uses: azure/container-apps-deploy-action@v2
+      - name: Build and push image to ACR (if Dockerfile exists)
+        uses: azure/acr-action@v1  # This step builds and pushes if Dockerfile present
         with:
-          dockerfilePath: test.Dockerfile
-          appSourcePath: ${{ github.workspace }} 
-          registryUrl: axwaymanish.azurecr.io
-          registryUsername: ${{ secrets.TEST123_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.TEST123_REGISTRY_PASSWORD }}
-          containerAppName: api-manager-21march
-          resourceGroup: RG-mavishnoi
-          imageToBuild: axwaymanish.azurecr.io/api-manager-21march:${{ github.sha }}
-          imageToDeploy: ${{imageToBuild}}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
+          registry: axwaymanish.azurecr.io
+          name: anm
+          username: ${{ secrets.TEST123_REGISTRY_USERNAME }}
+          password: ${{ secrets.TEST123_REGISTRY_PASSWORD }}
+
+      - name: Deploy to Container App
+        uses: Azure/container-apps-deploy-action@v1
+        with:
+          app-name: test123  # Replace with your app name
+          resource-group: RG-mavishnoi
+          image-source: acr  # Specify image source as ACR
+          image-name: axwaymanish.azurecr.io/anm 
           
 
 
