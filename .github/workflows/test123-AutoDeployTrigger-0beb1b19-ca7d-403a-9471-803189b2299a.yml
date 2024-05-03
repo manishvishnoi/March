@@ -42,6 +42,7 @@ jobs:
           containerAppName: api-manager-21march
           resourceGroup: RG-mavishnoi
           imageToBuild: axwaymanish.azurecr.io/api-manager-21march:${{ github.sha }}
+          imageToDeploy: ${{imageToBuild}}
           _buildArgumentsKey_: |
             _buildArgumentsValues_
           
