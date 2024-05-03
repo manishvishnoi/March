@@ -45,7 +45,7 @@ jobs:
           app-name: test123  # Replace with your app name
           resource-group: RG-mavishnoi
           image-source: acr  # Specify image source as ACR
-          image-name: axwaymanish.azurecr.io/anm 
+          imageToDeploy: axwaymanish.azurecr.io/anm 
           
 
 
