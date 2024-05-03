@@ -34,18 +34,10 @@ jobs:
       - name: Build and push image to ACR (if Dockerfile exists)
         uses: Azure/container-apps-deploy-action@v1  # This step builds and pushes if Dockerfile present
         with:
-          registry: axwaymanish.azurecr.io
-          name: anm
-          username: ${{ secrets.TEST123_REGISTRY_USERNAME }}
-          password: ${{ secrets.TEST123_REGISTRY_PASSWORD }}
-
-      - name: Deploy to Container App
-        uses: Azure/container-apps-deploy-action@v1
-        with:
-          app-name: test123  # Replace with your app name
-          resource-group: RG-mavishnoi
-          image-source: acr  # Specify image source as ACR
-          imageToDeploy: axwaymanish.azurecr.io/anm 
+          appSourcePath: ${{ github.workspace }}
+          acrName: axwaymanish.azurecr.io
+          containerAppName: test123
+          resourceGroup: RG-mavishnoi
           
 
 
