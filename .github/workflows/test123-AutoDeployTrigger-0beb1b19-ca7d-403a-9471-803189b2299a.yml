@@ -37,8 +37,8 @@ jobs:
           dockerfilePath: test.Dockerfile
           appSourcePath: ${{ github.workspace }} 
           registryUrl: axwaymanish.azurecr.io
-          registryUsername: ${{ secrets.APIMANAGER21MARCH_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.APIMANAGER21MARCH_REGISTRY_PASSWORD }}
+          registryUsername: ${{ secrets.TEST123_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.TEST123_REGISTRY_PASSWORD }}
           containerAppName: api-manager-21march
           resourceGroup: RG-mavishnoi
           imageToBuild: axwaymanish.azurecr.io/api-manager-21march:${{ github.sha }}
