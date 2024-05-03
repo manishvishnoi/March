@@ -39,6 +39,9 @@ jobs:
           registryPassword: Manish@18
           containerAppName: test123
           resourceGroup: RG-mavishnoi
-          imageToDeploy: manishvishnoi/anm13april:latest
+          appSourcePath: ${{ github.workspace }}
+          acrName: mytestacr
+          dockerfilePath: test.Dockerfile
+          
 
 
