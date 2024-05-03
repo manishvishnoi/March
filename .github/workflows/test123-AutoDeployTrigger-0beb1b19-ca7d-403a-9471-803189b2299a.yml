@@ -38,6 +38,9 @@ jobs:
           acrName: axwaymanish.azurecr.io/api-manager-21march
           containerAppName: testanm
           resourceGroup: RG-mavishnoi
+      - name: Enable Ingress using Azure CLI
+        run: |
+          az containerapp ingress create --name myIngressRule --resource-group RG-mavishnoi --app-name testanm --frontend-port 8090
           
 
 
