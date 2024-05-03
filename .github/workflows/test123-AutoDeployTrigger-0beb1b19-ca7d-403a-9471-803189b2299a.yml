@@ -32,7 +32,7 @@ jobs:
           subscription-id: ${{ secrets.TEST123_AZURE_SUBSCRIPTION_ID }}
 
       - name: Build and push image to ACR (if Dockerfile exists)
-        uses: azure/acr-action@v1  # This step builds and pushes if Dockerfile present
+        uses: Azure/container-apps-deploy-action@v1  # This step builds and pushes if Dockerfile present
         with:
           registry: axwaymanish.azurecr.io
           name: anm
