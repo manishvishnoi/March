@@ -1,5 +1,5 @@
 # Use the base image from the Azure Container Registry
-FROM manishvishnoi/anm13april:latest
+FROM axwaymanish.azurecr.io/anm-22march:ae45743031fd11f5d4a3fe3e4ef05a51171e6949
 # Set environment variables
 ENV ACCEPT_GENERAL_CONDITIONS=yes
 
